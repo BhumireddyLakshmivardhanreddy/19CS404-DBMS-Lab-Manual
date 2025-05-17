@@ -38,124 +38,64 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+-- 
+![image](https://github.com/user-attachments/assets/e52c50b7-ce20-49fd-9e73-3e80bbc9f0e8)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT o.ord_no, o.purch_amt, o.ord_date, o.customer_id, o.salesman_id
+FROM orders o
+JOIN salesman s ON o.salesman_id = s.salesman_id
+WHERE s.city = 'New York';
+
 ```
 
 **Output:**
-
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/20a555fe-8bca-42b5-9c77-8e64b38e1457)
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- 
+![image](https://github.com/user-attachments/assets/3cba95b8-74fb-4a0e-a78b-0055f0177ac5)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT *
+FROM CUSTOMERS
+WHERE ADDRESS = 'Delhi' AND AGE < 30;
 ```
-
 **Output:**
-
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/1e933d71-321d-4dc2-89fa-ed1f19559e6a)
 
 **Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
-```
-
 **Output:**
-
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/f0bced16-db95-4b1b-b346-97b25a971ef2)
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
-```
-
 **Output:**
-
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/35963a87-353e-48c6-9c0f-5559f76fcb9a)
 
 **Question 5**
----
--- Paste Question 5 here
-
-```sql
--- Paste your SQL code below for Question 5
-```
-
 **Output:**
-
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/506217b5-f908-4ac5-9e00-462b44f8b969)
 
 **Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
-```
-
 **Output:**
-
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/75fb2601-c1a0-4a71-93f5-b9b6b9cfa59e)
 
 **Question 7**
----
--- Paste Question 7 here
-
-```sql
--- Paste your SQL code below for Question 7
-```
-
 **Output:**
-
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/0a75abec-25f0-4e78-ab75-93bcd9733f85)
 
 **Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
-```
-
 **Output:**
-
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/77e2848e-cdb5-48d6-a800-21ba6f0b4c58)
 
 **Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
-
 **Output:**
-
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/318e582f-c7b0-41f6-b944-b60710fc55df)
 
 **Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
-
 **Output:**
-
-![Output10](output.png)
-
+![image](https://github.com/user-attachments/assets/a1e42189-e977-41b5-94eb-ef736958a6b8)
 
 ## RESULT
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
