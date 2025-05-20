@@ -1,4 +1,4 @@
-# Experiment 1: Entity-Relationship (ER) Diagram
+## Experiment 1: Entity-Relationship (ER) Diagram
 
 ## 🎯 Objective:
 To understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application.
@@ -45,28 +45,99 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission
+
+NAME - BHUMIREDDY LAKSHMI VARDHAN REDDY
+REGISTER NUMBER - 212223240016
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University ER Diagram
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
 
-## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+![ER_DIAGRAM](https://github.com/user-attachments/assets/0cb90708-269b-4af0-8fa2-f88eea3ac0ba)
 
-## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+## Entities and Attributes
+STUDENT
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+Attributes: STUDENT_ID (PK), NAME, DOB, GENDER, EMAIL, PHONE (Multivalued), ADDRESS
 
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+ COURSE
+
+Attributes: COURSE_ID (PK), COURSE_NAME, CREDITS, DEPARTMENT
+
+INSTRUCTOR
+
+Attributes: INSTRUCTOR_ID (PK), NAME, EMAIL, PHONE, DEPARTMENT
+
+ENROLLMENT
+
+Attributes: ENROLLMENT_ID (PK), STUDENT_ID (FK), COURSE_ID (FK), ENROLLDATE, GRADE
+
+CLASSROOM
+
+Attributes: CLASS_ID (PK), ROOM_NO, BUILDING, CAPACITY
+
+SCHEDULE
+
+Attributes: SCHEDULE_ID (PK), COURSE_ID (FK), CLASSROOM_ID (FK), INSTRUCTOR_ID (FK), TIME, DAY
+
+DEPARTMENT
+
+Attributes: DEPT_ID (PK), DEPT_NAME, HOD
+
+## Relationships and Constraints
+ENROLLMENT (between STUDENT and COURSE)
+
+Cardinality: Many-to-Many
+
+Participation: Total participation from ENROLLMENT to both STUDENT and COURSE
+
+TEACHERS (between COURSE and INSTRUCTOR)
+
+Cardinality: Many-to-One (Each Course can have multiple instructors; each Instructor can teach multiple courses)
+
+Participation: Partial
+
+BELONGS (between COURSE and DEPARTMENT)
+
+Cardinality: Many-to-One
+
+Participation: Total from COURSE to DEPARTMENT
+
+SCHEDULE (associates COURSE, CLASSROOM, INSTRUCTOR)
+
+Cardinality: Many-to-Many (A Course can have multiple schedules across days/classrooms/instructors)
+
+Participation: Total from SCHEDULE to all three entities
+
+## Extension: Prerequisite / Billing
+This ER diagram does not explicitly model prerequisites or billing. If you want to model prerequisites:
+
+Add a PREREQUISITE relationship:
+
+Between COURSE (as both dependent and prerequisite)
+
+With attributes like PREREQUISITE_TYPE if needed (e.g., hard/soft prereq)
+
+For billing:
+
+Add a new entity BILLING:
+
+Attributes: BILL_ID, STUDENT_ID, AMOUNT, DUE_DATE, STATUS
+
+Related to STUDENT (1:M)
+
+## Design Choices
+Multivalued Attribute (PHONE) in STUDENT is modeled with a double oval to denote multiple phone numbers.
+
+Associative Entities (ENROLLMENT, SCHEDULE) capture the many-to-many relationships and carry extra attributes like GRADE, TIME, etc.
+
+Composite Participation: COURSE is linked to multiple entities (INSTRUCTOR, DEPARTMENT, SCHEDULE) to ensure modularity.
+
+Normalization: Attributes are properly distributed among entities to reduce redundancy and maintain atomicity.
+
+DEPARTMENT handles course organization and instructor grouping to maintain academic structure.
 
 ## RESULT
+The ER model captures students, instructors, courses, programs, and their relationships, including enrollments and prerequisites. It’s clear, efficient, and supports future database extensions.**
